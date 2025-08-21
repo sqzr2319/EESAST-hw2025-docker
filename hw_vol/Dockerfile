@@ -8,9 +8,6 @@ RUN apt-get update \
 
 WORKDIR /work
 
-# 提供一个入口脚本：
-# - 第一个参数：源文件名（如 add.cpp 或 mul.cpp），该文件应存在于挂载的 /work 目录
-# - 其余参数：传递给编译出的可执行文件
 RUN set -eux; \
 	echo '#!/usr/bin/env bash'                                           >  /usr/local/bin/build_and_run; \
 	echo 'set -euo pipefail'                                             >> /usr/local/bin/build_and_run; \
